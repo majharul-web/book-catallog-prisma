@@ -1,6 +1,17 @@
-# Express-SQL-Prisma
+# Book Catallog Backend Assignment
 
-This guide will walk you through the process of setting up the Express-SQL-Prisma Starter project. By following these steps, you will clone the project, install dependencies, and configure Prisma for database management. Let's get started!
+<hr>
+
+### Project Name: Book Catallog Backend
+
+The main focus of this assignment is to implement CRUD operations, pagination and filtering using Prisma, Postgres and Express.
+
+### Technology Stack:
+
+- Use TypeScript as the Programming Language.
+- Use Express.js as the web framework.
+- Use Prisma as the Object Realtion Model (ORM).
+- Use postgreSQL as the database.
 
 ## Installation Steps
 
@@ -20,52 +31,36 @@ cd express-sql-starter
 yarn install
 ```
 
-4. Configure Prisma and the database connection:
+### Application Routes:
 
-- Add Prisma as a development dependency by running the following command:
+#### User
 
-```bash
-yarn add prisma --save-dev
-```
+- https://a8-book-catalog.vercel.app/api/v1/auth/signup (POST)
+- https://a8-book-catalog.vercel.app/api/v1/users (GET)
+- https://a8-book-catalog.vercel.app/api/v1/users/6177a5b87d32123f08d2f5d4 (Single GET)
+- https://a8-book-catalog.vercel.app/api/v1/users/6177a5b87d32123f08d2f5d4 (PATCH)
+- https://a8-book-catalog.vercel.app/api/v1/users/6177a5b87d32123f08d2f5d4 (DELETE)
+- https://a8-book-catalog.vercel.app/api/v1/profile (GET)
 
-- Set up your Prisma project by creating the Prisma schema file using the following command:
+### Category
 
-```bash
-npx prisma init
-```
+- https://a8-book-catalog.vercel.app/api/v1/categories/create-category (POST)
+- https://a8-book-catalog.vercel.app/api/v1/categories (GET)
+- https://a8-book-catalog.vercel.app/api/v1/categories/6177a5b87d32123f08d2f5d4 (Single GET)
+- https://a8-book-catalog.vercel.app/api/v1/categories/6177a5b87d32123f08d2f5d4 (PATCH)
+- https://a8-book-catalog.vercel.app/api/v1/categories/6177a5b87d32123f08d2f5d4 (DELETE)
 
-- Open the prisma/schema.prisma file and configure your database connection details.
+### Books
 
-```bash
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-```
+- https://a8-book-catalog.vercel.app/api/v1/books/create-book (POST)
+- https://a8-book-catalog.vercel.app/api/v1/books (GET)
+- https://a8-book-catalog.vercel.app/api/v1/books/:categoryId/category (GET)
+- https://a8-book-catalog.vercel.app/api/v1/books/:id (GET)
+- https://a8-book-catalog.vercel.app/api/v1/books/:id (PATCH)
+- https://a8-book-catalog.vercel.app/api/v1/books/:id (DELETE)
 
-- Create a .env file in the project root directory and set the DATABASE_URL environment variable. Replace the placeholders with your database connection details:
+### Orders
 
-```bash
-DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=SCHEMA"
-```
-
-5. Creating the database schema
-6. Migrate the database schema: Use the following command to create and apply the initial database schema:
-
-```bash
-npx prisma migrate dev --name init
-```
-
-This command creates a new migration file based on your schema changes and applies it to your database.
-
-6. `Install Prisma Client:` Install the Prisma Client library by running the following command:
-
-```bash
-yarn add @prisma/client
-```
-
-This command installs the Prisma Client, which provides an interface to interact with your database.
-
-That's it! You have successfully set up the Express-SQL-Prisma Starter project. You can now start exploring and working with the codebase. Refer to the project documentation or README for further instructions on how to run and use the core service.
-
-Happy coding!
+- https://a8-book-catalog.vercel.app/api/v1/orders/create-order (POST)
+- https://a8-book-catalog.vercel.app/api/v1/orders (GET)
+- https://a8-book-catalog.vercel.app/api/v1/orders/:orderId (GET)
