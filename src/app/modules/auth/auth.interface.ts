@@ -7,7 +7,7 @@ export type ILogin = {
 
 export type ILoginResponse = {
   accessToken: string;
-  user: Partial<User | null>;
+  user?: Partial<User | null>;
   refreshToken?: string;
 };
 
