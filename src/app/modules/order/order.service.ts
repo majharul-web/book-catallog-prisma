@@ -7,7 +7,7 @@ import { Order, Prisma } from '@prisma/client';
 import prisma from '../../../shared/prisma';
 import { ENUM_USER_ROLE } from '../../../enums/user';
 
-const createOrder = async (data: Order): Promise<Order> => {
+const createOrder = async (data: any): Promise<Order> => {
   const result = await prisma.order.create({
     data: data,
     include: {
