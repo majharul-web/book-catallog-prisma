@@ -1,7 +1,7 @@
 import express from 'express';
-// import validateRequest from '../../middlewares/validateRequest';
+import validateRequest from '../../middlewares/validateRequest';
 import { OrderController } from './order.controller';
-// import { OrderValidation } from './order.validations';
+import { OrderValidation } from './order.validations';
 import auth from '../../middlewares/auth';
 import { ENUM_USER_ROLE } from '../../../enums/user';
 import checkOrderAuthorization from '../../middlewares/checkSingleOrderAuthorization';
@@ -11,7 +11,7 @@ const router = express.Router();
 router.post(
   '/create-order',
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.CUSTOMER),
-  // validateRequest(OrderValidation.createOrderZodSchema),
+  validateRequest(OrderValidation.createOrderZodSchema),
   OrderController.createOrder
 );
 router.get(
