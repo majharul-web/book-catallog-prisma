@@ -19,6 +19,11 @@ app.use('/api/v1', routes);
 //global error handler
 app.use(globalErrorHandler);
 
+// Home route
+app.get('/', async (req: Request, res: Response) => {
+  res.send('Welcome to Prisma Book Catallog');
+});
+
 //handle not found
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(httpStatus.NOT_FOUND).json({

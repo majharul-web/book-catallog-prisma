@@ -25,9 +25,10 @@ model User {
   address    String
   profileImg String?
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  orders    Order[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  orders           Order[]
+  reviewAndRatings ReviewAndRating[]
 
   @@map("users")
 }
@@ -53,8 +54,9 @@ model Book {
   category        Category @relation(fields: [categoryId], references: [id])
   categoryId      String
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  reviewAndRatings ReviewAndRating[]
 
   @@map("books")
 }
@@ -76,4 +78,21 @@ enum orderStatus {
   pending
   shipped
   delivered
+}
+
+// schema.prisma
+
+model ReviewAndRating {
+  id     String @id @default(uuid())
+  review String
+  rating Int
+  userId String
+  bookId String
+
+  // Define foreign keys to relate the model to other tables if needed
+  user User @relation(fields: [userId], references: [id])
+  book Book @relation(fields: [bookId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
