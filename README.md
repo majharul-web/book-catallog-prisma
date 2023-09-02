@@ -13,6 +13,8 @@ The main focus of this assignment is to implement CRUD operations, pagination an
 - Use Prisma as the Object Realtion Model (ORM).
 - Use postgreSQL as the database.
 
+### Live Link: https://a8-book-catalog.vercel.app/
+
 ## Installation Steps
 
 ### Follow these steps to clone and set up starter project:
