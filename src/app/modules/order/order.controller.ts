@@ -26,9 +26,12 @@ const createOrder = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getAllOrders = catchAsync(async (req: Request, res: Response) => {
+  const { role, userId } = req.user || {};
+  const reqUser = { role, userId };
+
   const filters = pick(req.query, orderFilterableFields);
   const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
-  const result = await OrderService.getAllOrders(filters, options);
+  const result = await OrderService.getAllOrders(filters, options, reqUser);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,

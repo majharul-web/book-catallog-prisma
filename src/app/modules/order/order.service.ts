@@ -2,9 +2,10 @@ import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import { orderSearchableFields } from './order.constants';
-import { IOrderFilterRequest } from './order.interface';
+import { IOrderFilterRequest, reqUser } from './order.interface';
 import { Order, Prisma } from '@prisma/client';
 import prisma from '../../../shared/prisma';
+import { ENUM_USER_ROLE } from '../../../enums/user';
 
 const createOrder = async (data: Order): Promise<Order> => {
   const result = await prisma.order.create({
@@ -18,7 +19,8 @@ const createOrder = async (data: Order): Promise<Order> => {
 
 const getAllOrders = async (
   filterOptions: IOrderFilterRequest,
-  paginationOptions: IPaginationOptions
+  paginationOptions: IPaginationOptions,
+  user: reqUser
 ): Promise<IGenericResponse<Order[]>> => {
   const { searchTerm, ...filtersData } = filterOptions;
 
@@ -26,6 +28,12 @@ const getAllOrders = async (
     paginationHelpers.calculatePagination(paginationOptions);
 
   const andConditions = [];
+
+  if (user.role === ENUM_USER_ROLE.CUSTOMER) {
+    andConditions.push({
+      AND: [{ userId: user.userId }],
+    });
+  }
   if (searchTerm) {
     andConditions.push({
       OR: orderSearchableFields.map(field => ({
