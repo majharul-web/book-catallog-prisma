@@ -24,7 +24,7 @@ The main focus of this assignment is to implement CRUD operations, pagination an
 2. `Navigate into the project directory:` Use the cd command to navigate into the project directory:
 
 ```bash
-cd express-sql-starter
+cd book-catallog-prisma
 ```
 
 3. `Install project dependencies:` Next, install the project dependencies by running the following command:

@@ -24,7 +24,7 @@ const getAllOrders = async (
 ): Promise<IGenericResponse<Order[]>> => {
   const { searchTerm, ...filtersData } = filterOptions;
 
-  const { page, limit, skip, sortBy, sortOrder } =
+  const { page, size, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
 
   const andConditions = [];
@@ -59,7 +59,7 @@ const getAllOrders = async (
     },
     where: whereConditions,
     skip,
-    take: limit,
+    take: size,
     orderBy:
       sortBy && sortOrder
         ? {
@@ -77,7 +77,7 @@ const getAllOrders = async (
     meta: {
       total,
       page,
-      limit,
+      size,
     },
     data: result,
   };

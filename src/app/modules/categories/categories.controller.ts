@@ -17,7 +17,7 @@ const createCategory = catchAsync(async (req: Request, res: Response) => {
 });
 const getAllCategories = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, categoriesFilterableFields);
-  const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
+  const options = pick(req.query, ['size', 'page', 'sortBy', 'sortOrder']);
   const result = await CategoriesService.getAllCategories(filters, options);
   sendResponse(res, {
     statusCode: httpStatus.OK,

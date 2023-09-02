@@ -30,7 +30,7 @@ const getAllOrders = catchAsync(async (req: Request, res: Response) => {
   const reqUser = { role, userId };
 
   const filters = pick(req.query, orderFilterableFields);
-  const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
+  const options = pick(req.query, ['size', 'page', 'sortBy', 'sortOrder']);
   const result = await OrderService.getAllOrders(filters, options, reqUser);
   sendResponse(res, {
     statusCode: httpStatus.OK,
