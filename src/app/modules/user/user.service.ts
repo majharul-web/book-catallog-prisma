@@ -10,16 +10,16 @@ const getAllUsers = async (
   filterOptions: IUserFilterRequest,
   paginationOptions: IPaginationOptions
 ): Promise<IGenericResponse<User[]>> => {
-  const { searchTerm, ...filtersData } = filterOptions;
+  const { search, ...filtersData } = filterOptions;
 
   const { page, size, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
 
   const andConditions = [];
-  if (searchTerm) {
+  if (search) {
     andConditions.push({
       OR: userSearchableFields.map(field => ({
-        [field]: { contains: searchTerm, mode: 'insensitive' },
+        [field]: { contains: search, mode: 'insensitive' },
       })),
     });
   }

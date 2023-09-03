@@ -1,3 +1,3 @@
-export const orderFilterableFields: string[] = ['searchTerm', 'title'];
+export const orderFilterableFields: string[] = ['search', 'title'];
 
 export const orderSearchableFields: string[] = ['title'];

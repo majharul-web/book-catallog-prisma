@@ -1,5 +1,5 @@
 export type IOrderFilterRequest = {
-  searchTerm?: string | undefined;
+  search?: string | undefined;
   title?: string | undefined;
 };
 

@@ -39,30 +39,30 @@ yarn install
 
 - https://a8-book-catalog.vercel.app/api/v1/auth/signup (POST)
 - https://a8-book-catalog.vercel.app/api/v1/users (GET)
-- https://a8-book-catalog.vercel.app/api/v1/users/6177a5b87d32123f08d2f5d4 (Single GET)
-- https://a8-book-catalog.vercel.app/api/v1/users/6177a5b87d32123f08d2f5d4 (PATCH)
-- https://a8-book-catalog.vercel.app/api/v1/users/6177a5b87d32123f08d2f5d4 (DELETE)
+- https://a8-book-catalog.vercel.app/api/v1/users/1663dd1f-a63d-4d0a-8d7d-bd3ccbcde51b (Single GET)
+- https://a8-book-catalog.vercel.app/api/v1/users/1663dd1f-a63d-4d0a-8d7d-bd3ccbcde51b (PATCH)
+- https://a8-book-catalog.vercel.app/api/v1/users/1663dd1f-a63d-4d0a-8d7d-bd3ccbcde51b (DELETE)
 - https://a8-book-catalog.vercel.app/api/v1/profile (GET)
 
 ### Category
 
 - https://a8-book-catalog.vercel.app/api/v1/categories/create-category (POST)
 - https://a8-book-catalog.vercel.app/api/v1/categories (GET)
-- https://a8-book-catalog.vercel.app/api/v1/categories/6177a5b87d32123f08d2f5d4 (Single GET)
-- https://a8-book-catalog.vercel.app/api/v1/categories/6177a5b87d32123f08d2f5d4 (PATCH)
-- https://a8-book-catalog.vercel.app/api/v1/categories/6177a5b87d32123f08d2f5d4 (DELETE)
+- https://a8-book-catalog.vercel.app/api/v1/categories/8e2587db-c4eb-4979-9368-a314364c8005 (Single GET)
+- https://a8-book-catalog.vercel.app/api/v1/categories/8e2587db-c4eb-4979-9368-a314364c8005 (PATCH)
+- https://a8-book-catalog.vercel.app/api/v1/categories/8e2587db-c4eb-4979-9368-a314364c8005 (DELETE)
 
 ### Books
 
 - https://a8-book-catalog.vercel.app/api/v1/books/create-book (POST)
 - https://a8-book-catalog.vercel.app/api/v1/books (GET)
 - https://a8-book-catalog.vercel.app/api/v1/books/:categoryId/category (GET)
-- https://a8-book-catalog.vercel.app/api/v1/books/:id (GET)
-- https://a8-book-catalog.vercel.app/api/v1/books/:id (PATCH)
-- https://a8-book-catalog.vercel.app/api/v1/books/:id (DELETE)
+- https://a8-book-catalog.vercel.app/api/v1/books/210d0cbc-450e-48cd-b3df-01d4ba1ec8b2 (GET)
+- https://a8-book-catalog.vercel.app/api/v1/books/210d0cbc-450e-48cd-b3df-01d4ba1ec8b2 (PATCH)
+- https://a8-book-catalog.vercel.app/api/v1/books/210d0cbc-450e-48cd-b3df-01d4ba1ec8b2 (DELETE)
 
 ### Orders
 
 - https://a8-book-catalog.vercel.app/api/v1/orders/create-order (POST)
 - https://a8-book-catalog.vercel.app/api/v1/orders (GET)
-- https://a8-book-catalog.vercel.app/api/v1/orders/:orderId (GET)
+- https://a8-book-catalog.vercel.app/api/v1/orders/57df3808-3a34-4793-9c7f-3003b547076c (GET)

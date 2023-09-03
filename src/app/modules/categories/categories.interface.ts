@@ -1,4 +1,4 @@
 export type ICategoriesFilterRequest = {
-  searchTerm?: string | undefined;
+  search?: string | undefined;
   title?: string | undefined;
 };

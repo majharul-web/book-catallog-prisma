@@ -17,16 +17,16 @@ const getAllCategories = async (
   filterOptions: ICategoriesFilterRequest,
   paginationOptions: IPaginationOptions
 ): Promise<IGenericResponse<Category[]>> => {
-  const { searchTerm, ...filtersData } = filterOptions;
+  const { search, ...filtersData } = filterOptions;
 
   const { page, size, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
 
   const andConditions = [];
-  if (searchTerm) {
+  if (search) {
     andConditions.push({
       OR: categoriesSearchableFields.map(field => ({
-        [field]: { contains: searchTerm, mode: 'insensitive' },
+        [field]: { contains: search, mode: 'insensitive' },
       })),
     });
   }

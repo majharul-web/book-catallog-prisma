@@ -22,7 +22,7 @@ const getAllOrders = async (
   paginationOptions: IPaginationOptions,
   user: reqUser
 ): Promise<IGenericResponse<Order[]>> => {
-  const { searchTerm, ...filtersData } = filterOptions;
+  const { search, ...filtersData } = filterOptions;
 
   const { page, size, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
@@ -34,10 +34,10 @@ const getAllOrders = async (
       AND: [{ userId: user.userId }],
     });
   }
-  if (searchTerm) {
+  if (search) {
     andConditions.push({
       OR: orderSearchableFields.map(field => ({
-        [field]: { contains: searchTerm, mode: 'insensitive' },
+        [field]: { contains: search, mode: 'insensitive' },
       })),
     });
   }

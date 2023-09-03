@@ -6,6 +6,6 @@ export const userSearchableFields: string[] = [
 ];
 
 export const userFilterableFields: string[] = [
-  'searchTerm',
+  'search',
   ...userSearchableFields,
 ];

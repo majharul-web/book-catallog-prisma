@@ -13,7 +13,7 @@ const getAllUsers = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculties fetched successfully',
+    message: 'User fetched successfully',
     meta: result.meta,
     data: result.data,
   });

@@ -75,7 +75,6 @@ const signIn = async (payload: ILogin): Promise<ILoginResponse> => {
   return {
     accessToken,
     refreshToken,
-    user: isUserExist,
   };
 };
 
