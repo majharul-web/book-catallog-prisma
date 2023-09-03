@@ -21,6 +21,10 @@ The main focus of this assignment is to implement CRUD operations, pagination an
 
 1. `Clone the project:` Open your terminal or command prompt and run the following command to clone the project repository:
 
+```bash
+git clone https://github.com/majharul-web/book-catallog-prisma.git
+```
+
 2. `Navigate into the project directory:` Use the cd command to navigate into the project directory:
 
 ```bash
@@ -31,6 +35,12 @@ cd book-catallog-prisma
 
 ```bash
 yarn install
+```
+
+3. `Run this project locally:` Next, Run this project locally following command:
+
+```bash
+yarn dev
 ```
 
 ### Application Routes:
