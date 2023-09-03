@@ -37,7 +37,7 @@ cd book-catallog-prisma
 yarn install
 ```
 
-3. `Run this project locally:` Next, Run this project locally following command:
+4. `Run this project locally:` Next, Run this project locally following command:
 
 ```bash
 yarn dev
