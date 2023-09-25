@@ -48,6 +48,7 @@ yarn dev
 #### User
 
 - https://a8-book-catalog.vercel.app/api/v1/auth/signup (POST)
+- https://a8-book-catalog.vercel.app/api/v1/auth/signin (POST)
 - https://a8-book-catalog.vercel.app/api/v1/users (GET)
 - https://a8-book-catalog.vercel.app/api/v1/users/1663dd1f-a63d-4d0a-8d7d-bd3ccbcde51b (Single GET)
 - https://a8-book-catalog.vercel.app/api/v1/users/1663dd1f-a63d-4d0a-8d7d-bd3ccbcde51b (PATCH)
