@@ -1,11 +1,10 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
-import sendResponse from '../../../shared/sendResponse';
+import sendResponse, { sendLginResponse } from '../../../shared/sendResponse';
 import { AuthService } from './auth.service';
 import { User } from '@prisma/client';
 import config from '../../../config';
-import { ILoginResponse } from './auth.interface';
 
 const signUp = catchAsync(async (req: Request, res: Response) => {
   const userData = req.body;
@@ -33,11 +32,11 @@ const signIn = catchAsync(async (req: Request, res: Response) => {
   };
   res.cookie('refreshToken', refreshToken, cookieOptions);
 
-  sendResponse<ILoginResponse>(res, {
+  sendLginResponse<any>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'User signin successfully!',
-    data: others,
+    token: others.accessToken,
   });
 });
 export const AuthController = {
